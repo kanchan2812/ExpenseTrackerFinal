@@ -11,7 +11,7 @@ const PORT=process.env.PORT;
 
 
 
-const sequelize=require('./Utils/database');
+const sequelize=require('./utils/database');
 const expenseroutes=require('./routes/expenseroutes');
 const loginsignupRoutes=require('./routes/loginsignupRoutes');
 const productRoutes=require('./routes/product');

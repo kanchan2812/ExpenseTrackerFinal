@@ -1,5 +1,5 @@
 const Sequelize=require('sequelize');
-const sequelize=require('../Utils/database');
+const sequelize=require('../utils/database');
 
 const Forgotpassword=sequelize.define('forgotpassword',{
     id:{
