@@ -1,4 +1,9 @@
 node_modules
 .env
 
-
+WEBSITE=http://16.171.176.94:3000
+SQL_DB_NAME='expensetracker'
+SQL_DB_USER='root'
+SQL_DB_PASSWORD='root'
+DATABASE_DIALECT='mysql'
+SQL_DB_HOST='localhost'
