@@ -2,7 +2,7 @@
 
 const Expense=require('../models/expenses.model');
 const User=require('../models/user.model');
-const sequelize=require('../Utils/database');
+const sequelize=require('../utils/database');
 const userServices=require('../services/userservices')
 const s3Services=require('../services/S3service')
 const DownloadedFile=require('../models/downloadfile.model');
