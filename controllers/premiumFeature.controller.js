@@ -1,7 +1,7 @@
 const User=require('../models/user.model');
 const Expense=require('../models/expenses.model');
 const Order=require('../models/orders.model');
-const sequelize=require('../Utils/database');
+const sequelize=require('../utils/database');
 
 
  const getUserLeaderBoard=async (req,res,next)=>{
