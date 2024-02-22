@@ -11,7 +11,7 @@ async function loginUser(event)
 
         const loginuser={email,password}
 
-        const res=await axios.post('http://54.86.187.148:3000/user/login',loginuser);
+        const res=await axios.post('https://16.171.176.94:3000/user/login',loginuser);
         
         console.log(res.data);
         console.log(res);

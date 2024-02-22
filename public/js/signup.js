@@ -28,7 +28,7 @@ try {
     document.getElementById('phoneid').value='';
     document.getElementById('passid').value='';
 
-    const res= await axios.post('http://54.86.187.148:3000/user/signup',signupDetails);
+    const res= await axios.post('https://16.171.176.94:3000/user/signup',signupDetails);
     
     console.log(res);
 

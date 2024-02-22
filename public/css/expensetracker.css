@@ -1,0 +1,57 @@
+.visibleid
+{
+       display: flex; 
+       text-align: end;  
+       margin-left:50%;
+   
+}
+.visibility,h3
+{
+    margin-top: 10px;
+    
+}
+.btn-primary{
+    height:30px;
+    padding: 2px;
+}
+
+.btn-dark
+{
+ margin: 10px;
+ width: fit-content;
+
+
+}
+form{
+    padding: 3px;
+    margin: 10px;
+}
+
+
+.container
+{
+    padding: 3px;
+    margin: 3px;
+    background-color: beige;
+}
+
+#allExpenselist,li{
+   display: block;
+   padding: 5px;
+   margin:2px;
+}
+.expenselist
+{
+  
+    margin: 50px 100px 50px 100px;
+    
+}
+li
+{
+   
+    background-color:rgb(23, 216, 204);
+}
+.container{
+    padding: 3px;
+    margin: 20px;
+}

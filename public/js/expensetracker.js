@@ -18,7 +18,7 @@ async function saveExpenses(event)
          
         console.log(token);
 
-        const res=await axios.post('http://54.86.187.148:3000/expense/addexpenses',details,{headers:{"Authorisation":token}});
+        const res=await axios.post('https://16.171.176.94:3000/expense/addexpenses',details,{headers:{"Authorisation":token}});
 
 
         console.log(res.data.newExpense);
@@ -84,7 +84,7 @@ try {
     const token=localStorage.getItem('token')
     const pageSize=localStorage.getItem('pageSize')
     const page =1
-    const res = await axios.get(`http://54.86.187.148:3000/expense/getexpenses?page=${page}&pageSize=${pageSize}`,{headers:{"Authorisation":token}});
+    const res = await axios.get(`https://16.171.176.94:3000/expense/getexpenses?page=${page}&pageSize=${pageSize}`,{headers:{"Authorisation":token}});
     const decodetoken= parseJwt(token)
     console.log(decodetoken);
 
@@ -115,7 +115,7 @@ async function deleteExpense(id)
 {
     try {
         const token=localStorage.getItem('token');
-        const res=await axios.delete(`http://54.86.187.148:3000/expense/delete-expense/${id}`,{headers:{"Authorisation":token}});
+        const res=await axios.delete(`https://16.171.176.94:3000/expense/delete-expense/${id}`,{headers:{"Authorisation":token}});
         removeUserFromScreen(id);
         
     } catch (error) {
@@ -147,7 +147,7 @@ function removeUserFromScreen(id)
 
 document.getElementById('rzp-button').onclick=async (e)=>{
     const token = localStorage.getItem('token');
-    const res=await axios.get('http://54.86.187.148:3000/purchase/premiummembership',{headers:{"Authorisation":token}});
+    const res=await axios.get('https://16.171.176.94:3000/purchase/premiummembership',{headers:{"Authorisation":token}});
     console.log(res);
     console.log(res.razorpay_payment_id);
     var options={
@@ -175,7 +175,7 @@ document.getElementById('rzp-button').onclick=async (e)=>{
         {
 
             console.log(res);
-            const response=await axios.post('http://54.86.187.148:3000/purchase/updatetransactionstatus',{
+            const response=await axios.post('https://16.171.176.94:3000/purchase/updatetransactionstatus',{
                 order_id:options.order_id,
                 payment_id:res.razorpay_payment_id},
                 {headers:{"Authorisation":token}})
@@ -227,7 +227,7 @@ function showleaderBoard()
 
     inputElement.onclick=async()=>{
     const token = localStorage.getItem('token');
-    const userLeaderboardArray=await axios.get('http://54.86.187.148:3000/premium/showLeaderBoard',{headers:{"Authorisation":token}});
+    const userLeaderboardArray=await axios.get('https://16.171.176.94:3000/premium/showLeaderBoard',{headers:{"Authorisation":token}});
     console.log(userLeaderboardArray);
 
 
@@ -253,7 +253,7 @@ async function download(){
         const token = localStorage.getItem('token');
         console.log("enetr download  function in try block");
 
-        const response = await axios.get('http://54.86.187.148:3000/user/download',{headers:{"Authorisation":token}});
+        const response = await axios.get('https://16.171.176.94:3000/user/download',{headers:{"Authorisation":token}});
         console.log(response);
         console.log(response.data.fileUrl);
         if (response.status === 200) {
@@ -279,7 +279,7 @@ async function pageSize(val){
         const token = localStorage.getItem('token');
         localStorage.setItem('pageSize',val);
         const page=1
-        const res = await axios.get(`http://54.86.187.148:3000/expense/getexpenses?page=${page}&pageSize=${val}`,{headers:{"Authorisation":token}});
+        const res = await axios.get(`https://16.171.176.94:3000/expense/getexpenses?page=${page}&pageSize=${val}`,{headers:{"Authorisation":token}});
       console.log('success');
         console.log(res);
         console.log(res.data.allExpenses);
@@ -338,7 +338,7 @@ async function getProducts(page){
         const token = localStorage.getItem('token');
         const pageSize = localStorage.getItem('pageSize')
     
-        const res = await axios.get(`http://54.86.187.148:3000/expense/getexpenses?page=${page}&pageSize=${pageSize}`,{headers:{"Authorisation":token}});
+        const res = await axios.get(`https://16.171.176.94:3000/expense/getexpenses?page=${page}&pageSize=${pageSize}`,{headers:{"Authorisation":token}});
         console.log(res);
         console.log(res.data.allExpenses);
         listExpense(res.data.allExpenses)

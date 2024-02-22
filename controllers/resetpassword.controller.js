@@ -46,7 +46,7 @@ const forgotPassword=async(req,res,next)=>{
                     subject: 'Reset Password ',
                      textContent: `Follow the link and reset the password `,
                     htmlContent: `<h1>click on the link below to reset the password</h1><br>
-                        <a href="http://54.86.187.148:3000/password/resetpassword/${id}">Reset your Password</a>`,
+                        <a href="${process.env.WEBSITE}/password/resetpassword/${id}">Reset your Password</a>`,
                         params: {
                             role: 'Frontend',
                         },

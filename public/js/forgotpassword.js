@@ -6,7 +6,7 @@ async function forgetPassword(event)
      const data={
         email:document.getElementById('mailid').value
      }
-     const res=await axios.post('http://54.86.187.148:3000/password/forgotpassword',data);
+     const res=await axios.post('https://16.171.176.94:3000/password/forgotpassword',data);
 
      console.log(res);
 
