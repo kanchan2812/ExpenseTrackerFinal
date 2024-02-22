@@ -9,8 +9,6 @@ dotenv.config()
 const PORT=process.env.PORT;
 
 
-
-
 const sequelize=require('./utils/database');
 const expenseroutes=require('./routes/expenseroutes');
 const loginsignupRoutes=require('./routes/loginsignupRoutes');
@@ -32,6 +30,12 @@ const path=require('path')
 app.use(cors());
 app.use(bodyParser.json({ extended: false })); ////this is for handling forms
 app.use(bodyParser.json());
+
+// Serve static files from public directory
+app.use(express.static(path.join(__dirname, 'public')));
+
+// Serve HTML files from views directory
+app.use(express.static(path.join(__dirname, 'views')));
 
 
 app.use('/user',loginsignupRoutes);
@@ -66,12 +70,12 @@ ForgotPassword.belongsTo(User)
 
 
 async function initiate(){
-    try{
+    try {
         await sequelize.sync();
         app.listen(PORT,()=>{
-            console.log(`server is running at${PORT}`);
-        });
-    }catch(error){
+            console.log(`Server is running at ${PORT}`);
+        });       
+    } catch (error) {
         console.log(error);
     }
 }
